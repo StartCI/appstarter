@@ -1,5 +1,15 @@
 <?php
+    if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+        header('Access-Control-Allow-Origin: *');
+        header('Access-Control-Allow-Methods: POST, GET, DELETE, PUT, PATCH, OPTIONS');
+        header('Access-Control-Allow-Headers: token, Content-Type');
+        header('Access-Control-Max-Age: 1728000');
+        header('Content-Length: 0');
+        header('Content-Type: text/plain');
+        die();
+    }
 
+    header('Access-Control-Allow-Origin: *');
 /*
  *---------------------------------------------------------------
  * CHECK PHP VERSION
@@ -45,7 +55,7 @@ if (getcwd() . DIRECTORY_SEPARATOR !== FCPATH) {
 
 // LOAD OUR PATHS CONFIG FILE
 // This is the line that might need to be changed, depending on your folder structure.
-require FCPATH . '../app/Config/Paths.php';
+require FCPATH . 'app/Config/Paths.php';
 // ^^^ Change this line if you move your application folder
 
 $paths = new Config\Paths();
