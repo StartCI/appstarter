@@ -10,8 +10,11 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@quasar/extras": "^1.16.13",
     "axios": "^1.7.8",
     "nuxt": "^3.14.1592",
+    "nuxt-quasar-ui": "^2.1.7",
+    "quasar": "^2.17.4",
     "vue": "latest",
     "vue-router": "latest"
   },
